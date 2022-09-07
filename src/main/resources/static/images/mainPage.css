@@ -1,0 +1,55 @@
+h1 {
+    padding-top: 80px;
+    position: absolute;
+    left: 210px;
+    top: -35px;
+
+}
+
+header{
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+.headerBild
+{
+    box-shadow: 0 2px 5px #535353;
+    border-radius: 10px;
+}
+.topMenu {
+    display: flex;
+    background: rgb(2, 144, 233);
+    align-items: center;
+    gap:100px;
+    margin-left:320px;
+    margin-right: 320px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    justify-content: center;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.topMenu.div
+{
+    background: darkgreen;
+    border: solid 1px;
+    border-radius: 10px;
+    justify-content: center;
+justify-content: space-around;
+padding:10px;
+}
+
+a{
+    text-decoration: none;
+}
+.label
+{
+    margin-top: 15px;
+    margin-left:550px;
+
+}

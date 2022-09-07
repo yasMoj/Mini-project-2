@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Admin Page</h1>
+<p>Add new user</p>
+<form action="/saveCustomer" th:object="${customer}" method="POST">
+  First name: <input type="text" th:field="*{firstName}"/>
+  Last name: <input type="text" th:field="*{lastName}"/>
+  E-mail: <input type="text" th:field="*{email}"/>
+  Password: <input type="text" th:field="*{password}"/>
+  <input th:if="${id != null}" type="hidden" th:field="*{id}"/>
+  <input type="submit" value="Create user">
+</form>
+<p>Delete user</p>
+<form action="/saveCustomer" th:object="${customer}" method="POST">
+  User id: <input type="text" th:field="*{firstName}"/>
+  <input th:if="${id != null}" type="hidden" th:field="*{id}"/>
+  <input type="submit" value="Delete user">
+</form>
+
+<p>Delete item</p>
+<form action="/saveCustomer" th:object="${customer}" method="POST">
+  Item id: <input type="text" th:field="*{firstName}"/>
+
+  <input th:if="${id != null}" type="hidden" th:field="*{id}"/>
+  <input type="submit" value="Delete item">
+</form>
+
+<p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
+<form th:action="@{/logout}" method="post">
+  <input type="submit" value="Logout"/>
+</form>
+
+</body>
+</html>

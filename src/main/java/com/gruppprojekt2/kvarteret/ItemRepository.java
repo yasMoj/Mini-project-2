@@ -15,11 +15,12 @@ private List<Item> itemsList;
     public ItemRepository()
     {
         itemsList = new ArrayList<>();
-        for(int i = 1;i<=20;i++)
+
+        for(int i = 1;i<=95;i++)
         {
             String productName = "";
             int randomProduct = ThreadLocalRandom.current().nextInt(0, 6);
-            Double randomPrice = ThreadLocalRandom.current().nextDouble(20, 5000);
+            double randomPrice = ThreadLocalRandom.current().nextDouble(20, 5000);
             switch (randomProduct) {
                 case 0 -> productName = "Elvisp";
                 case 1 -> productName = "Såg";
@@ -32,10 +33,18 @@ private List<Item> itemsList;
             itemsList.add(new Item(i,productName,randomPrice, "Det här är bara en tom beskrivning av annons " + i));
         }
     }
+
     public List<Item> getItems() {
         return itemsList;
     }
 
+    /*public ItemRepository() {
+        itemsList = new ArrayList<>();
+
+        for (int i = 1; i <= 10; i++) {
+            itemsList.add(new Item(10+i, "Name " + i,  40 + i + 1.99, "Låna detta" + ("blabla"+i)));
+        }
+    }*/
     public Item getItem(int id) {
         for (Item item : itemsList) {
             if (item.getId() == id) {

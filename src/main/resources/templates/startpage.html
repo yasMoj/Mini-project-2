@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <!-- Förstasidan med möjlighet att logga in och gå till signup -->
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="images/mainPage.css">
+    <title>Document</title>
 </head>
 <body>
+<h1><img src="images/sneclear.png" alt="logo" width="500" height="300">
+</h1>
+<header>
+    <img src="images/kvarteret.jpg"class="headerBild" alt="Sthlm" width="600"></header>
 
-<form th:action="/" th:method="POST">
-    <label for="user">Username</label>
-    <input type="text" id="user" name="username">
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password">
-    <input type="submit">
-</form>
+<div class="topMenu">
+    <div>
+        <form th:action="/" th:method="POST">
+            <label for="user">Username</label>
+            <input type="text" id="user" name="username">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <input type="submit">
+        </form>
+    </div>
+
+
 
 <div th:if="${param.error}">
     Invalid username and password.
@@ -23,6 +34,7 @@
     <label for="signup">New user?</label>
     <a href="/newUser" id="signup">Sign up here</a>
 </div>
-
+<label class="label" for="signup">New user?</label>
+<a href="/newUser" id="signup">Sign up here</a>
 </body>
 </html>
