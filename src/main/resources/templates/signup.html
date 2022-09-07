@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <!-- Sida med ett formulär för att skapa en användare -->
     <meta charset="UTF-8">
@@ -7,5 +7,15 @@
 </head>
 <body>
 
+<h1>Skapa en användare för att logga in i Kvarteret</h1>
+
+<form action="/saveCustomer" th:object="${customer}" method="POST">
+    Förnamn: <input type="text" th:field="*{firstName}"/><br><br>
+    Efternamn: <input type="text" th:field="*{lastName}"/><br><br>
+    E-mail: <input type="text" th:field="*{email}"/><br><br>
+    Lösenord: <input type="text" th:field="*{password}"/><br><br>
+    <input th:if="${id != null}" type="hidden" th:field="*{id}"/>
+    <input type="submit" value="Skapa användare">
+</form>
 </body>
 </html>

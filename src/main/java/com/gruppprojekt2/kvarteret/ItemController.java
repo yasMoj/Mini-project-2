@@ -16,7 +16,6 @@ public class ItemController {
 
     @Autowired
     ItemRepository itemRepository;
-
     @GetMapping("/items/{id}")
     public String item(Model model, @PathVariable Integer id) {
         Item item1 = itemRepository.getItem(id);
