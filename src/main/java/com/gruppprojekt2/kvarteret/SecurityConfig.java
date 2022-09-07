@@ -1,4 +1,4 @@
-package com.gruppprojekt2.kvarteret;
+/*package com.gruppprojekt2.kvarteret;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,12 +15,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public UserDetailsService userDetailsService () {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
         manager.createUser(org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder().username("user").password("123").roles("USER").build());
+        manager.createUser(org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder().username("user").password("123").roles("USER").build());
+
         return manager;
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+
                 .authorizeRequests()
                 .antMatchers("/items").hasRole("USER")
                 .anyRequest().authenticated()
@@ -32,6 +35,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/")
                 .permitAll();
 
-
     }
-}
+}*/
