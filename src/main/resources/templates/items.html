@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <!-- Sida för att visa en lista med flera annonser -->
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<div>
+    <h1>Annonser</h1>
+    <div>
+        <table>
+            <tr>
+                <th>Namn</th>
+                <th>Pris</th>
+            </tr>
+            <tr th:each="item : ${items}">
+                <td><a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
+                <td th:text="${item.price}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="row">
+        <!--
+        <span th:if="${showPrev}">
+            <a th:href="'/?page=' + ${currentPage-1}" th:text="Previous"></a>
+        </span>
+
+        <span th:each="page : ${pages}">
+            <span th:if="${currentPage == page}" th:text="${page}"></span>
+            <a th:if="${currentPage != page}" th:href="'/?page=' + ${page}" th:text="${page}"></a>
+        </span>
+
+        <span th:if="${showNext}">
+            <a th:href="'/?page=' + ${currentPage+1}" th:text="Next"></a>
+        </span>
+        -->
+        <nav>
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${!showPrev} ? disabled">
+                    <span th:if="${!showPrev}" class="page-link">Previous</span>
+                    <a th:if="${showPrev}" th:href="'/?page=' + ${currentPage-1}" class="page-link">Previous</a>
+                </li>
+
+                <li th:each="page : ${pages}" class="page-item" th:classappend="${currentPage == page} ? active">
+                    <span th:if="${currentPage == page}" class="page-link" th:text="${page}"></span>
+                    <a th:if="${currentPage != page}" class="page-link" th:href="'/?page=' + ${page}" th:text="${page}"></a>
+                </li>
+
+                <li class="page-item" th:classappend="${!showNext} ? disabled">
+                    <span th:if="${!showNext}" class="page-link">Next</span>
+                    <a th:if="${showNext}" th:href="'/?page=' + ${currentPage+1}" class="page-link">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
 
 </body>
 </html>
