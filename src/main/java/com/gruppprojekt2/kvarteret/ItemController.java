@@ -35,6 +35,12 @@ public class ItemController {
         model.addAttribute("currentPage", page);
         model.addAttribute("showPrev", page > 1);
         model.addAttribute("showNext", page < pageCount);
+        return "items";
+    }
+
+    @GetMapping("/items/")
+    public String itemPage()
+    {
 
         return "items";
     }
