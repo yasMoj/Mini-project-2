@@ -16,5 +16,10 @@ public class UserController {
         return "items";
     }
 
+    @GetMapping ("/newUser")
+    String newuser () {
+        return "newUser";
+    }
+
 
 }
