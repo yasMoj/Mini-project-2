@@ -35,6 +35,8 @@
         <span th:if="${showNext}">
             <a th:href="'/items?page=' + ${currentPage+1}" th:text="Next"></a>
         </span>
+
+
         <!--
         <nav>
             <ul class="pagination">
@@ -56,6 +58,10 @@
         </nav>-->
     </div>
 </div>
+<p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/>
+</form>
 
 
 </body>
