@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <!-- Förstasidan med möjlighet att logga in och gå till signup -->
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+<form th:action="@{/}" th:method="POST">
+    <label for="user">Username</label>
+    <input type="text" id="user" name="username">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <input type="submit">
+</form>
+
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
 
 </body>
 </html>
