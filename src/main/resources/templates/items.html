@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <!-- Sida för att visa en lista med flera annonser -->
     <meta charset="UTF-8">
@@ -22,20 +22,20 @@
     </div>
 
     <div class="row">
-        <!--
+
         <span th:if="${showPrev}">
-            <a th:href="'/?page=' + ${currentPage-1}" th:text="Previous"></a>
+            <a th:href="'items/?page=' + ${currentPage-1}" th:text="Previous"></a>
         </span>
 
         <span th:each="page : ${pages}">
             <span th:if="${currentPage == page}" th:text="${page}"></span>
-            <a th:if="${currentPage != page}" th:href="'/?page=' + ${page}" th:text="${page}"></a>
+            <a th:if="${currentPage != page}" th:href="'/items?page=' + ${page}" th:text="${page}"></a>
         </span>
 
         <span th:if="${showNext}">
-            <a th:href="'/?page=' + ${currentPage+1}" th:text="Next"></a>
+            <a th:href="'/items?page=' + ${currentPage+1}" th:text="Next"></a>
         </span>
-        -->
+        <!--
         <nav>
             <ul class="pagination">
                 <li class="page-item" th:classappend="${!showPrev} ? disabled">
@@ -53,7 +53,7 @@
                     <a th:if="${showNext}" th:href="'/?page=' + ${currentPage+1}" class="page-link">Next</a>
                 </li>
             </ul>
-        </nav>
+        </nav>-->
     </div>
 </div>
 
