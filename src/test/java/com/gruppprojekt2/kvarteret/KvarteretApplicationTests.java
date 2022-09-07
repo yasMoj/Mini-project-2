@@ -9,5 +9,4 @@ class KvarteretApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
