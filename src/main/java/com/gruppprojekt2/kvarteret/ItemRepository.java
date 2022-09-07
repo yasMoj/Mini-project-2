@@ -38,6 +38,13 @@ private List<Item> itemsList;
         return itemsList;
     }
 
+    public void addItem(Item item)
+    {
+        int lastId = itemsList.get(itemsList.size()-1).getId();
+        item.setId(lastId++);
+        itemsList.add(item);
+    }
+
     /*public ItemRepository() {
         itemsList = new ArrayList<>();
 
