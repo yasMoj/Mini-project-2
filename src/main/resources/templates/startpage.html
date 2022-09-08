@@ -15,7 +15,7 @@
 
 <div class="topMenu">
     <div>
-        <form th:action="@{/}" th:method="POST">
+        <form action="/" th:method="POST">
             <label for="user">Username</label>
             <input type="text" id="user" name="username">
             <label for="password">Password</label>
@@ -23,9 +23,17 @@
             <input type="submit">
         </form>
     </div>
-
 </div>
-<label class="label" for="signup">New user?</label>
-<a href="/newUser" id="signup">Sign up here</a>
+
+
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<br>
+<div>
+    <label class="label" for="signup">New user?</label>
+    <a href="/newUser" id="signup">Sign up here</a>
+</div>
+
 </body>
 </html>
