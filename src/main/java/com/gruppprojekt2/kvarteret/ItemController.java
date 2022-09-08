@@ -43,14 +43,14 @@ public class ItemController {
         return "items";
     }*/
 
-    @GetMapping("/addItem/")
+    @GetMapping("/addItem")
     public String addItem(Model model) {
         Item item = new Item();
-        itemRepository.addItem(item);
+        model.addAttribute("item",item);
         return "addItem";
     }
 
-    @PostMapping("/addItem/")
+    @PostMapping("/addItem")
     public String addItem(@ModelAttribute Item item, Model model) {
         itemRepository.addItem(item);
 

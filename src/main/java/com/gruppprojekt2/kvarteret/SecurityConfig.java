@@ -11,6 +11,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
     @Bean
     public UserDetailsService userDetailsService () {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
@@ -24,6 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/images/**").permitAll()
                 .antMatchers("/addItem").permitAll()
+                .antMatchers("/newUser").permitAll()
                 .antMatchers("/items").hasRole("USER")
                 .antMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
