@@ -6,12 +6,12 @@
 </head>
 <h3>Create an add </h3>
 <body>
-<form action="/addItem" method="POST" th:object="${Item}">
-    Name: <input type="text" th:field="*{name}"/>
-   Description: <input type="text" th:field="*{description}"/>
-   Price: <input type="text" th:field="*{price}"/>
-    <input type="submit"/>
 
+<form action="/addItem" method="POST" th:object="${item}">
+    Name: <input type="text" th:field="*{name}"/>
+    Description: <input type="text" th:field="*{description}"/>
+    Price: <input type="text" th:field="*{price}"/>
+    <input type="submit"/>
 </form>
 </body>
 </html>
