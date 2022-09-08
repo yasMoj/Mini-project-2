@@ -41,8 +41,8 @@ private List<Item> itemsList;
 
     public void addItem(Item item)
     {
-        int lastId = itemsList.get(itemsList.size()-1).getId();
-        item.setId(lastId++);
+        int lastId = itemsList.get(itemsList.size()-1).getId()+1;
+        item.setId(lastId);
         itemsList.add(item);
     }
 
@@ -76,7 +76,8 @@ private List<Item> itemsList;
         return itemsList.subList(from, to);
     }
 
-    public int numberOfPages(int pageSize) {
+    public int numberOfPages(int pageSize)
+    {
         return (int)Math.ceil((double)itemsList.size() / pageSize);
     }
 

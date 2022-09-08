@@ -22,7 +22,6 @@ public class ItemController {
         return "item";
     }
 
-
     @GetMapping("/items")
     public String items(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
         List<Item> items = itemRepository.getPage(page - 1, PAGE_SIZE);
