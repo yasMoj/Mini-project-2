@@ -22,6 +22,7 @@ public class ItemController {
         return "item";
     }
 
+
     @GetMapping("/items")
     public String items(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
         List<Item> items = itemRepository.getPage(page - 1, PAGE_SIZE);
@@ -54,6 +55,7 @@ public class ItemController {
         model.addAttribute("item",item);
         itemRepository.addItem(item);
         System.out.printf("New item added:%s",item.getName());
+
         return "addItem";
     }
 
