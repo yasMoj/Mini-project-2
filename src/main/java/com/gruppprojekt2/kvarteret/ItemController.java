@@ -45,17 +45,18 @@ public class ItemController {
 
     @GetMapping("/addItem")
     public String addItem(Model model) {
-        Item item = new Item();
-        model.addAttribute("item",item);
+        model.addAttribute("item",new Item());
         return "addItem";
     }
 
     @PostMapping("/addItem")
     public String addItem(@ModelAttribute Item item, Model model) {
+        model.addAttribute("item",item);
         itemRepository.addItem(item);
-
+        System.out.printf("New item added:%s",item.getName());
         return "addItem";
     }
+
     private int[] toArray ( int num){
         int[] result = new int[num];
         for (int i = 0; i < num; i++) {

@@ -17,7 +17,7 @@ private List<Item> itemsList;
     {
         itemsList = new ArrayList<>();
 
-        for(int i = 1;i<=95;i++)
+        for(int i = 1;i<=12;i++)
         {
             String productName = "";
             int randomProduct = ThreadLocalRandom.current().nextInt(0, 6);
