@@ -1,6 +1,7 @@
 package com.gruppprojekt2.kvarteret;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,8 @@ private List<Item> itemsList;
         item.setId(lastId++);
         itemsList.add(item);
     }
+
+
 
     /*public ItemRepository() {
         itemsList = new ArrayList<>();

@@ -3,9 +3,7 @@ package com.gruppprojekt2.kvarteret;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,12 +36,14 @@ public class ItemController {
         return "items";
     }
 
+
+    /*
     @GetMapping("/items/")
     public String itemPage()
     {
 
         return "items";
-    }
+    }*/
 
     private int[] toArray(int num) {
         int[] result = new int[num];
