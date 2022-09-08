@@ -12,7 +12,15 @@
     Description: <input type="text" th:field="*{description}"/>
     Price: <input type="text" th:field="*{price}"/>
     <input type="submit"/>
-    <p><a href="/items">Tillbaka till listan</a></p>
 </form>
+
+<div th:if="${item.name != null}">
+    <h3>Your add is created! </h3>
+    <p th:text="'Name: ' + ${item.name}"></p>
+    <p th:text="'Description: ' + ${item.description}"></p>
+    <p th:text="'Price: ' + ${item.price}"></p>
+</div>
+<p><a href="/addItem">Create a new add</a></p><p><a href="/items">Back</a></p>
+
 </body>
 </html>
