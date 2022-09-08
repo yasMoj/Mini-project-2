@@ -37,7 +37,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .loginPage("/")
                 .permitAll();
-
-
     }
 }
