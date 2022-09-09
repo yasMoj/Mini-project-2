@@ -54,6 +54,7 @@ public class ItemController {
         model.addAttribute("item",item);
         itemRepository.addItem(item);
         System.out.printf("New item added:%s",item.getName());
+
         return "addItem";
     }
 

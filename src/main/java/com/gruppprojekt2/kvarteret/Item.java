@@ -1,5 +1,7 @@
 package com.gruppprojekt2.kvarteret;
 
+import java.text.DecimalFormat;
+
 public class Item
 {
     private int id;
@@ -33,6 +35,7 @@ public class Item
     public Double getPrice() {
         return price;
     }
+
 
     public void setPrice(Double price) {
         this.price = price;
