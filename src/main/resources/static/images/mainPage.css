@@ -1,5 +1,24 @@
-.intemCenter {
-    te
+.itemlistingheader {
+    display: flex;
+    width: 400;
+    align-items: center;
+    align-text: center;
+    background: #669BBC;
+    border-radius: 10px;
+    align-items: center;
+    margin-left:440px;
+    margin-right: 440px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 15px 50px 15px 50px;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.itemlistinglinks {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
 }
 
 .itemlistingdataname {
@@ -17,17 +36,19 @@
 }
 
 .itemlistingtable {
-    display: flex;
     justify-items : center;
     font-family: Bahnschrift SemiBold;
     table-layout: fixed;
-    background: #669BBC;
+    background: #88AB75;
     gap:100px;
     border-radius: 10px;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-right: 75px;
-    padding-left: 75px
+    padding-left: 75px;
+    justify-content: space-around;
+    align-content: space-around;
+    margin:auto;
 }
 
 h1.kvarteret {

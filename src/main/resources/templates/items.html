@@ -8,9 +8,9 @@
 
 </head>
 <body>
-<div>
-    <h2>Ads</h2>
-    <p><a href="/addItem">Create new ads</a></p>
+<div class="itemlistinggeneral">
+    <h3 class="itemlistingheader">ADS</h3>
+    <p><a href="/addItem" class="itemlistinglinks">Create new ads</a></p>
     <div>
         <table class="itemlistingtable">
             <tr class="itemlistingsmolheader">
@@ -27,16 +27,16 @@
     <div class="row">
 
         <span th:if="${showPrev}">
-            <a th:href="'/items?page=' + ${currentPage-1}" th:text="Previous"></a>
+            <a th:href="'/items?page=' + ${currentPage-1}" th:text="Previous" class="itemlistinglinks"></a>
         </span>
 
         <span th:each="page : ${pages}">
-            <span th:if="${currentPage == page}" th:text="${page}"></span>
-            <a th:if="${currentPage != page}" th:href="'/items?page=' + ${page}" th:text="${page}"></a>
+            <span th:if="${currentPage == page}" th:text="${page}" class="itemlistinglinks"></span>
+            <a th:if="${currentPage != page}" th:href="'/items?page=' + ${page}" th:text="${page}" class="itemlistinglinks"></a>
         </span>
 
         <span th:if="${showNext}">
-            <a th:href="'/items?page=' + ${currentPage+1}" th:text="Next"></a>
+            <a th:href="'/items?page=' + ${currentPage+1}" th:text="Next" class="itemlistinglinks"></a>
         </span>
 
     </div>
