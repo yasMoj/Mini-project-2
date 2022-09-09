@@ -1,3 +1,26 @@
+.itemlistingheader {
+    display: flex;
+    width: 400;
+    align-items: center;
+    align-text: center;
+    background: #669BBC;
+    border-radius: 10px;
+    align-items: center;
+    margin-left:440px;
+    margin-right: 440px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 15px 50px 15px 50px;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.itemlistinglinks {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
 .itemlistingdataname {
     width: 150px;
     text-align: left;
@@ -13,15 +36,19 @@
 }
 
 .itemlistingtable {
+    justify-items : center;
     font-family: Bahnschrift SemiBold;
     table-layout: fixed;
-    background: #669BBC;
+    background: #88AB75;
     gap:100px;
     border-radius: 10px;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-right: 75px;
-    padding-left: 75px
+    padding-left: 75px;
+    justify-content: space-around;
+    align-content: space-around;
+    margin:auto;
 }
 
 h1.kvarteret {
@@ -54,7 +81,7 @@ header{
     margin-left:330px;
     margin-right: 325px;
     margin-top: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 2px;
     justify-content: center;
     border-radius: 10px;
     padding-top: 25px;
@@ -195,6 +222,12 @@ font-size: 12px;
 display: flex;
 justify-content: center;
 margin-top: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 /*
 #0C4767 mörkblå
