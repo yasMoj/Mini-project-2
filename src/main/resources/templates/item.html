@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8"></meta>
     <title>Item</title>
+    <link rel="stylesheet" href="images/mainPage.css">
     <!---<link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">-->
 </head>
 <body>
-<h1>Item</h1>
-<table>
-    <tr>
+<h2>Produkt</h2>
+<table class="itemlistingtable">
+    <tr class="itemlistingsmolheader">
         <th>Name</th>
         <th th:text="${item.name}"></th>
     </tr>
@@ -16,6 +17,7 @@
         <th>Price</th>
         <th th:text="${item.price}"></th>
     </tr>
+
     <tr>
         <th>Description</th>
         <th th:text="${item.description}"></th>
