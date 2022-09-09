@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-public class ItemController {
-
+public class ItemController
+{
     private static final int PAGE_SIZE = 10;
 
     @Autowired
@@ -55,9 +55,9 @@ public class ItemController {
         model.addAttribute("item",item);
         itemRepository.addItem(item);
 
-        //User user = userRepository.getUser(request.getRemoteUser())
+        //User user = (User)userRepository.getUser(request.getRemoteUser());
         //item.setUserID(user.getId());
-        System.out.printf("New item added:%s",item.getName());
+        //System.out.printf("New item added:%s",item.getName());
 
         return "addItem";
     }
