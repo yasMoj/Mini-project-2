@@ -116,6 +116,7 @@ body {
 
 h2 {
 color: #0C4767;
+text-transform: uppercase;
 
 }
 
@@ -123,6 +124,7 @@ color: #0C4767;
     display: flex;
     justify-content: center;
     font-family: Bahnschrift SemiBold;
+    text-transform: uppercase;
 }
 
 #ytitle2 {

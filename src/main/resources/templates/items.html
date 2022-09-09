@@ -9,7 +9,7 @@
 </head>
 <body>
 <div>
-    <h2>Annonser</h2>
+    <h2>ANNONSER</h2>
     <p><a href="/addItem">Ny annons</a></p>
     <div>
         <table class="itemlistingtable">
@@ -27,7 +27,7 @@
     <div class="row">
 
         <span th:if="${showPrev}">
-            <a th:href="'items/?page=' + ${currentPage-1}" th:text="Previous"></a>
+            <a th:href="'/items?page=' + ${currentPage-1}" th:text="Previous"></a>
         </span>
 
         <span th:each="page : ${pages}">
