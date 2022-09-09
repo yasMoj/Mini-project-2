@@ -163,10 +163,13 @@ text-transform: uppercase;
     }
 }
 
-.ylinks {
+.ylinks{
   font-family: Bahnschrift Light;
   margin-left: 540px;
 }
+.knappar{
+font-family: Bahnschrift Light;
+  margin-left: 530px;}
 .userInput
 {
     padding-bottom: 20px;
