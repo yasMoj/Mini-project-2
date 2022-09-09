@@ -31,10 +31,6 @@ public class UserController {
         return "items";
     }
 
-    /*@GetMapping ("/newUser")
-    String newuser () {
-        return "newUser";
-    }*/
 
     @GetMapping("/newUser")
     public String showRegistrationForm(Model model) {
@@ -53,4 +49,6 @@ public class UserController {
         SecurityConfig.addUser(user.email,user.password);
         return "newUser";
     }
+
+
 }
