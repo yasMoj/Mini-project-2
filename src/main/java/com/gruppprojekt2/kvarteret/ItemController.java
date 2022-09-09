@@ -5,11 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-public class ItemController {
-
+public class ItemController
+{
     private static final int PAGE_SIZE = 10;
 
     @Autowired
@@ -21,7 +22,6 @@ public class ItemController {
         model.addAttribute("item", item1);
         return "item";
     }
-
 
     @GetMapping("/items")
     public String items(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
@@ -51,10 +51,13 @@ public class ItemController {
     }
 
     @PostMapping("/addItem")
-    public String addItem(@ModelAttribute Item item, Model model) {
+    public String addItem(@ModelAttribute Item item, Model model, HttpServletRequest request) {
         model.addAttribute("item",item);
         itemRepository.addItem(item);
-        System.out.printf("New item added:%s",item.getName());
+
+        //User user = (User)userRepository.getUser(request.getRemoteUser());
+        //item.setUserID(user.getId());
+        //System.out.printf("New item added:%s",item.getName());
 
         return "addItem";
     }

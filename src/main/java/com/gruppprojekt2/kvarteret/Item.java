@@ -1,11 +1,14 @@
 package com.gruppprojekt2.kvarteret;
 
+import java.text.DecimalFormat;
+
 public class Item
 {
     private int id;
     private String name;
     private Double price;
     private String description;
+    private int userID; // foreign key
 
     public Item() { }
 
@@ -34,6 +37,7 @@ public class Item
         return price;
     }
 
+
     public void setPrice(Double price) {
         this.price = price;
     }
@@ -44,5 +48,13 @@ public class Item
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 }
