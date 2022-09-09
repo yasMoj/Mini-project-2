@@ -1,3 +1,7 @@
+.intemCenter {
+    te
+}
+
 .itemlistingdataname {
     width: 150px;
     text-align: left;
@@ -13,6 +17,8 @@
 }
 
 .itemlistingtable {
+    display: flex;
+    justify-items : center;
     font-family: Bahnschrift SemiBold;
     table-layout: fixed;
     background: #669BBC;
