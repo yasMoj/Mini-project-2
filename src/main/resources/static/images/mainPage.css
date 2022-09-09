@@ -124,6 +124,7 @@ text-transform: uppercase;
     display: flex;
     justify-content: center;
     font-family: Bahnschrift SemiBold;
+    text-transform: uppercase;
 }
 
 #ytitle2 {
