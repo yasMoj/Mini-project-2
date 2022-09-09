@@ -9,15 +9,13 @@
 </head>
 <body>
 <div>
-    <div class="newUser">
-        <h3>ADS</h3>
-    </div>
-    <p><a href="/addItem">Ny annons</a></p>
-    <div class="userForm">
-        <table>
+    <h2>Ads</h2>
+    <p><a href="/addItem">Create new ads</a></p>
+    <div>
+        <table class="itemlistingtable">
             <tr class="itemlistingsmolheader">
-                <th>Namn</th>
-                <th>Pris</th>
+                <th>Product</th>
+                <th>Price</th>
             </tr>
             <tr th:each="item : ${items}">
                 <td class="itemlistingdataname"><a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
