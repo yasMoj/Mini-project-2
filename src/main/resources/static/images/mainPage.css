@@ -83,19 +83,46 @@ header{
     margin-bottom: 20px;
     padding: 45px 50px 15px 50px;
 }
+.addItemForm
+{
+ display: flex;
+    background: #88AB75;
+    border-radius: 10px;
+    align-items: center;
+    margin-left:440px;
+    margin-right: 440px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 45px 50px 15px 50px;
+    }
+    .createAd{
+        display: flex;
+        background: #669BBC;
+        border-radius: 10px;
+        align-items: center;
+        margin-left:450px;
+        margin-right: 450px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
 h3{
     font-size: 30px;
     margin-left: 110px;
     text-transform: uppercase;
     font-family: Bahnschrift SemiBold;
 }
+.createTitle
+{
+margin-left: 70px;
+}
 p{
-font-family: Bahnschrift Light semiCondensed;
+font-family: Bahnschrift Light;
 }
 div{
     font-family: Bahnschrift Light;
 }
 a{
+font-family: Bahnschrift Light;
     text-decoration: none;
 }
 .Rlabel
@@ -131,14 +158,32 @@ text-transform: uppercase;
     display: flex;
     justify-content: center;
     font-family: Bahnschrift SemiBold;
+        margin-top: 80px;
+        margin-bottom: -50px;
+    }
 }
 
 .ylinks {
-    color: #88AB75;
+  font-family: Bahnschrift Light;
+  margin-left: 540px;
 }
 .userInput
 {
     padding-bottom: 20px;
+}
+.itemInput
+{
+    padding-bottom: 20px;
+}
+.created{
+display: flex;
+background: #FFC09F;
+border-radius: 10px;
+align-items: center;
+margin-left:450px;
+margin-right: 450px;
+margin-top: 50px;
+margin-bottom: 20px;
 }
 .error
 {
