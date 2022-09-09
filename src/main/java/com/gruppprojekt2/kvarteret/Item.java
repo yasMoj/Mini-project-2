@@ -8,6 +8,7 @@ public class Item
     private String name;
     private Double price;
     private String description;
+    private int userID; // foreign key
 
     public Item() { }
 
@@ -47,5 +48,13 @@ public class Item
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 }

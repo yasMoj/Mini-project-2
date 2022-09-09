@@ -26,6 +26,17 @@ public class UserRepository {
         return null;
     }
 
+    // test
+    public User getUser(String username)
+    {
+        for (User user : userList) {
+            if (user.getEmail().equals(username)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
     public List<User> getUserList() {
         return userList;
     }

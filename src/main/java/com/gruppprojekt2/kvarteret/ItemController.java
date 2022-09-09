@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -50,9 +51,12 @@ public class ItemController {
     }
 
     @PostMapping("/addItem")
-    public String addItem(@ModelAttribute Item item, Model model) {
+    public String addItem(@ModelAttribute Item item, Model model, HttpServletRequest request) {
         model.addAttribute("item",item);
         itemRepository.addItem(item);
+
+        //User user = userRepository.getUser(request.getRemoteUser())
+        //item.setUserID(user.getId());
         System.out.printf("New item added:%s",item.getName());
 
         return "addItem";
