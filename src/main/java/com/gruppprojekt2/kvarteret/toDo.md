@@ -4,17 +4,15 @@
 - unit test ✓
 - lägga upp annonser knapp✓
 - sida/template lägga till annonser✓
-- nyaste annonsen/Id ***
-- Css till alla templates
+- Css till alla templates✓
 
 **Next version**
 - Database for ads and members
 - Admin page
 - Pictures on items
+- New ad/Id
 - Share your "Only Fans"
 
-
-CSS
 
 itemS - Vincent
 
