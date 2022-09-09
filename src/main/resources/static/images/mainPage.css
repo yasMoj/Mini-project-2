@@ -1,4 +1,3 @@
-h1.kvarteret {
 
 .itemlistingdata {
     width: 150px;
@@ -18,7 +17,7 @@ h1.kvarteret {
     padding-bottom: 25px;
 }
 
-h1 {
+h1.kvarteret {
     padding-top: 80px;
     position: absolute;
     left: 210px;
