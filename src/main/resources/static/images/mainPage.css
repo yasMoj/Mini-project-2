@@ -84,8 +84,7 @@ header{
     padding: 45px 50px 15px 50px;
 }
 .addItemForm
-{
- display: flex;
+{display: flex;
     background: #88AB75;
     border-radius: 10px;
     align-items: center;
