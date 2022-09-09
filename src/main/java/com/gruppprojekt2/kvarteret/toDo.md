@@ -7,8 +7,11 @@
 - nyaste annonsen/Id ***
 - Css till alla templates
 
-font - 
-färg - 
+**Next version**
+- Database for ads and members
+- Admin page
+- Pictures on items
+- Share your "Only Fans"
 
 
 CSS
