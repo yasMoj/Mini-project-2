@@ -21,17 +21,18 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password">
             <input type="submit">
+            <div class="error" th:if="${param.error}">
+                Invalid username and password.
+            </div>
         </form>
     </div>
 </div>
 
 
-<div th:if="${param.error}">
-    Invalid username and password.
-</div>
+
 <br>
 <div>
-    <label class="label" for="signup">New user?</label>
+    <label class="Rlabel" for="signup">New user?</label>
     <a href="/newUser" id="signup">Sign up here</a>
 </div>
 
