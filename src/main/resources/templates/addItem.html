@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="images/mainPage.css">
 </head>
-<h3>Create an add </h3>
+<p><a class="ylinks" href="/items">Back</a></p>
+<h2 id="ytitle1">Create an add </h2>
 <body>
 
 <form action="/addItem" method="POST" th:object="${item}">
@@ -15,12 +17,12 @@
 </form>
 
 <div th:if="${item.name != null}">
-    <h3>Your add is created! </h3>
+    <h2 id="ytitle2">Your add is created! </h2>
     <p th:text="'Name: ' + ${item.name}"></p>
     <p th:text="'Description: ' + ${item.description}"></p>
     <p th:text="'Price: ' + ${item.price}"></p>
 </div>
-<p><a href="/addItem">Create a new add</a></p><p><a href="/items">Back</a></p>
+<p><a class="ylinks" href="/addItem">Create a new add</a></p>
 
 </body>
 </html>

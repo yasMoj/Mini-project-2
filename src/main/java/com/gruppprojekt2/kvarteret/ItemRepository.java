@@ -21,7 +21,8 @@ private List<Item> itemsList;
         {
             String productName = "";
             int randomProduct = ThreadLocalRandom.current().nextInt(0, 6);
-            int randomPrice = ThreadLocalRandom.current().nextInt(20, 5000);
+            int randomPrice = ThreadLocalRandom.current().nextInt(101, 5000);
+            randomPrice = Math.round(randomPrice/100)*100;
             switch (randomProduct) {
                 case 0 -> productName = "Elvisp";
                 case 1 -> productName = "Såg";

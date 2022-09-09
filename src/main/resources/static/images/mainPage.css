@@ -1,20 +1,27 @@
-
-.itemlistingdata {
+.itemlistingdataname {
     width: 150px;
+    text-align: left;
+}
+
+.itemlistingdataprice {
+    width: 150px;
+    text-align: right;
 }
 
 .itemlistingsmolheader {
-    text-align:
+    text-align: center;
 }
 
 .itemlistingtable {
+    font-family: Bahnschrift SemiBold;
     table-layout: fixed;
     background: #669BBC;
     gap:100px;
-    justify-content: center;
     border-radius: 10px;
     padding-top: 25px;
     padding-bottom: 25px;
+    padding-right: 75px;
+    padding-left: 75px
 }
 
 h1.kvarteret {
@@ -31,7 +38,9 @@ header{
     justify-content: center;
     align-items: center;
     align-content: center;
+
 }
+
 .headerBild
 {
     box-shadow: 0 2px 5px #535353;
@@ -98,6 +107,32 @@ margin-left:550px;
     margin-top: 15px;
     margin-left:620px;
 
+}
+
+body {
+    background-color: #dfecf4;
+    font-family: Bahnschrift Light
+}
+
+h2 {
+color: #0C4767;
+
+}
+
+#ytitle1 {
+    display: flex;
+    justify-content: center;
+    font-family: Bahnschrift SemiBold;
+}
+
+#ytitle2 {
+    display: flex;
+    justify-content: center;
+    font-family: Bahnschrift SemiBold;
+}
+
+.ylinks {
+    color: #88AB75;
 }
 .userInput
 {

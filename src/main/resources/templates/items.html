@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-
 </head>
 <body>
 <div>
@@ -19,8 +18,8 @@
                 <th>Pris</th>
             </tr>
             <tr th:each="item : ${items}">
-                <td class="itemlistingdata"><a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
-                <td class="itemlistingdata" th:text="${item.price}"></td>
+                <td class="itemlistingdataname"><a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
+                <td class="itemlistingdataprice" th:text="${item.price} + ' SEK'"></td>
             </tr>
         </table>
     </div>
