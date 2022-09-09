@@ -5,7 +5,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;*/
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
@@ -26,9 +28,14 @@ public class UserController {
     }
 
     @GetMapping ("/newUser")
-    String newuser () {
+   public String newUser(Model model) {
+        model.addAttribute("user", new User());
         return "newUser";
     }
-
-
+    @PostMapping("/newUser")
+    public String newUser(@ModelAttribute User user, Model model)
+    {model.addAttribute("user", user);
+       // itemRepository.addItem(item); - behöver en metod motsvarande till user
+        return "newUser";
+    }
 }
