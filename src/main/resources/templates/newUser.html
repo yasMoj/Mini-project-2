@@ -15,13 +15,17 @@
 
     <form action="/newUser" method="POST" th:object="${user}">
         <table>
-            <th class="userInput"> First name: <input type="text" th:field="*{firstName}"/></th>
+            <th class="userInput"> First name: <input type="text" th:field="*{firstName}"/>
+            <p th:if="${#fields.hasErrors('firstName')}">Fyll i ett namn hörru</p></th>
             <tr></tr>
-            <th class="userInput">  Last name: <input type="text" th:field="*{lastName}"/></th>
+            <th class="userInput">  Last name: <input type="text" th:field="*{lastName}"/>
+            <p th:if="${#fields.hasErrors('lastName')}">Fyll i ett namn hörru</p></th>
             <tr></tr>
-            <th class="userInput">Email @: <input type="text" th:field="*{email}"/></th>
+            <th class="userInput">Email @: <input type="text" th:field="*{email}"/>
+            <p th:if="${#fields.hasErrors('email')}">Fyll i din mail hörru</p></th>
             <tr></tr>
-            <th class="userInput"> Password:     <input type="text" th:field="*{password}"/></th>
+            <th class="userInput"> Password:     <input type="text" th:field="*{password}"/>
+            <p th:if="${#fields.hasErrors('password')}">Fyll i ett lösenord hörru</p></th>
             <tr></tr>
             <th class="userInput"> <input type="submit"/></th>
         </table>
