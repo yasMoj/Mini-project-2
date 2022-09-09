@@ -10,13 +10,18 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
+    private static InMemoryUserDetailsManager manager;
 
     @Bean
     public UserDetailsService userDetailsService () {
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+        manager = new InMemoryUserDetailsManager();
         manager.createUser(org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder().username("user").password("123").roles("USER").build());
         return manager;
+    }
+
+    public static void addUser(String username, String password)
+    {
+        manager.createUser(org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder().username(username).password(password).roles("USER").build());
     }
 
     @Override

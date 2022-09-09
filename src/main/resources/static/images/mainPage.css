@@ -1,13 +1,32 @@
-h1 {
+
+.itemlistingdata {
+    width: 150px;
+}
+
+.itemlistingsmolheader {
+    text-align:
+}
+
+.itemlistingtable {
+    table-layout: fixed;
+    background: #669BBC;
+    gap:100px;
+    justify-content: center;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+h1.kvarteret {
     padding-top: 80px;
     position: absolute;
     left: 210px;
-    top: -35px;
+    top: -135px;
 
 }
 
 header{
-    padding-top: 150px;
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,38 +38,66 @@ header{
     box-shadow: 0 2px 5px #535353;
     border-radius: 10px;
 }
+
 .topMenu {
     display: flex;
-    background: rgb(2, 144, 233);
+    background: #669BBC;
     align-items: center;
-    gap:100px;
-    margin-left:320px;
-    margin-right: 320px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-left:330px;
+    margin-right: 325px;
+    margin-top: 10px;
+    margin-bottom: 100px;
     justify-content: center;
     border-radius: 10px;
     padding-top: 25px;
     padding-bottom: 25px;
 }
-
-.topMenu.div
+.newUser
 {
-    background: darkgreen;
-    border: solid 1px;
+    display: flex;
+    background: #669BBC;
     border-radius: 10px;
-    justify-content: center;
-justify-content: space-around;
-padding:10px;
+    align-items: center;
+    margin-left:450px;
+    margin-right: 450px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
-
+.userForm
+{
+    display: flex;
+    background: #88AB75;
+    border-radius: 10px;
+    align-items: center;
+    margin-left:440px;
+    margin-right: 440px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 45px 50px 15px 50px;
+}
+h3{
+    font-size: 30px;
+    margin-left: 110px;
+    text-transform: uppercase;
+    font-family: Bahnschrift SemiBold;
+}
+p{
+font-family: Bahnschrift Light semiCondensed;
+}
+div{
+    font-family: Bahnschrift Light;
+}
 a{
     text-decoration: none;
 }
-.label
+.Rlabel
+{
+margin-left:550px;
+}
+.backButton
 {
     margin-top: 15px;
-    margin-left:550px;
+    margin-left:620px;
 
 }
 
@@ -79,3 +126,29 @@ color: #0C4767;
 .ylinks {
     color: #88AB75;
 }
+.userInput
+{
+    padding-bottom: 20px;
+}
+.error
+{
+font-family: Bahnschrift Light;
+color: red;
+font-size: 12px;
+display: flex;
+justify-content: center;
+margin-top: 10px;
+}
+/*
+#0C4767 mörkblå
+#88AB75 aspargus /grön
+#FFC09F peach
+#669BBC ljusblå
+
+
+Bahnschrift SemiBold - rubrik
+Bahnschrift Light - brödtext
+Bahnschrift Light SemiCondensed - preivous knappar
+
+
+*/

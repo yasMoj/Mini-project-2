@@ -21,7 +21,7 @@ private List<Item> itemsList;
         {
             String productName = "";
             int randomProduct = ThreadLocalRandom.current().nextInt(0, 6);
-            double randomPrice = ThreadLocalRandom.current().nextDouble(20, 5000);
+            int randomPrice = ThreadLocalRandom.current().nextInt(20, 5000);
             switch (randomProduct) {
                 case 0 -> productName = "Elvisp";
                 case 1 -> productName = "Såg";
@@ -67,6 +67,12 @@ private List<Item> itemsList;
     public List<Item> items()
     {
         return itemsList;
+    }
+
+    public void removeItem(Item item)
+    {
+        if (itemsList.contains(item))
+            itemsList.remove(item);
     }
 
     public List<Item> getPage(int page, int pageSize) {

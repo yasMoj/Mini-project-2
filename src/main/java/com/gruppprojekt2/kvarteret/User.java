@@ -1,10 +1,18 @@
 package com.gruppprojekt2.kvarteret;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 public class User {
     int id;
+    @NotEmpty
     String firstName;
+    @NotEmpty
     String lastName;
+    @NotEmpty
+    @Email
     String email;
+    @NotEmpty
     String password;
 
     public User(int id, String firstName, String lastName, String email, String password) {

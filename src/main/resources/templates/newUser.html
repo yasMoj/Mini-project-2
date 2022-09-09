@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Item</title>
+    <link rel="stylesheet" href="images/mainPage.css">
 </head>
 <body>
-<h1>New user</h1>
+<div class="newUser">
+    <h3>New User </h3>
+</div>
+<div class="userForm">
+
+    <form action="/newUser" method="POST" th:object="${user}">
+        <table><div>
+            <th class="userInput"> First name: <input type="text" th:field="*{firstName}"/>
+            <p class="error" th:if="${#fields.hasErrors('firstName')}">Incorrect first name</p></th>
+            <tr></tr>
+            <th class="userInput">  Last name: <input type="text" th:field="*{lastName}"/>
+            <p class="error" th:if="${#fields.hasErrors('lastName')}">Incorrect last name</p></th>
+            <tr></tr>
+            <th class="userInput">Email @: <input type="text" th:field="*{email}"/>
+            <p class="error" th:if="${#fields.hasErrors('email')}">Enter email</p></th>
+            <tr></tr>
+            <th class="userInput"> Password:     <input type="text" th:field="*{password}"/>
+            <p class="error" th:if="${#fields.hasErrors('password')}">Incorrect password</p></th>
+            <tr></tr>
+            <th class="userInput"> <input type="submit"/></th>
+        </div></table>
+    </form>
+</div>
+<div>
+<a class ="backButton" href="/">Log in</a></p>
+    </div>
+
 </body>
 </html>

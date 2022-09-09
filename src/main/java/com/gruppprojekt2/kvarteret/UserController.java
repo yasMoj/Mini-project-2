@@ -4,19 +4,21 @@ package com.gruppprojekt2.kvarteret;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;*/
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class UserController {
  //   List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-    User user = new User();
 
     @GetMapping("/")
     String start() {
@@ -24,16 +26,27 @@ public class UserController {
     }
 
     @PostMapping("/")
-    String firstPage(HttpSession session, @RequestParam String username,@RequestParam String password) {
-        if (user.getEmail().equals(username) && user.getPassword().equals(password)) {
-            session.setAttribute("username", username);
-            return "items";
-        }
-        return "startpage";
+    String firstPage()
+    {
+        return "items";
     }
 
-    @GetMapping ("/newUser")
-    String newuser () {
+
+    @GetMapping("/newUser")
+    public String showRegistrationForm(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "newUser";
+    }
+
+    @PostMapping("/newUser")
+    public String registerUserAccount(@Valid User user, BindingResult bindingResult, Model model)
+    {
+        if(bindingResult.hasErrors())
+            return "newUser";
+
+        model.addAttribute("user",user);
+        SecurityConfig.addUser(user.email,user.password);
         return "newUser";
     }
 
