@@ -39,26 +39,6 @@
             <a th:href="'/items?page=' + ${currentPage+1}" th:text="Next"></a>
         </span>
 
-
-        <!--
-        <nav>
-            <ul class="pagination">
-                <li class="page-item" th:classappend="${!showPrev} ? disabled">
-                    <span th:if="${!showPrev}" class="page-link">Previous</span>
-                    <a th:if="${showPrev}" th:href="'/?page=' + ${currentPage-1}" class="page-link">Previous</a>
-                </li>
-
-                <li th:each="page : ${pages}" class="page-item" th:classappend="${currentPage == page} ? active">
-                    <span th:if="${currentPage == page}" class="page-link" th:text="${page}"></span>
-                    <a th:if="${currentPage != page}" class="page-link" th:href="'/?page=' + ${page}" th:text="${page}"></a>
-                </li>
-
-                <li class="page-item" th:classappend="${!showNext} ? disabled">
-                    <span th:if="${!showNext}" class="page-link">Next</span>
-                    <a th:if="${showNext}" th:href="'/?page=' + ${currentPage+1}" class="page-link">Next</a>
-                </li>
-            </ul>
-        </nav>-->
     </div>
 </div>
 <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
