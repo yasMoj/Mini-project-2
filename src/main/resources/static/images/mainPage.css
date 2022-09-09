@@ -1,4 +1,24 @@
 h1.kvarteret {
+
+.itemlistingdata {
+    width: 150px;
+}
+
+.itemlistingsmolheader {
+    text-align:
+}
+
+.itemlistingtable {
+    table-layout: fixed;
+    background: #669BBC;
+    gap:100px;
+    justify-content: center;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+h1 {
     padding-top: 80px;
     position: absolute;
     left: 210px;
@@ -12,20 +32,19 @@ header{
     justify-content: center;
     align-items: center;
     align-content: center;
-
 }
 .headerBild
 {
     box-shadow: 0 2px 5px #535353;
     border-radius: 10px;
 }
+
 .topMenu {
     display: flex;
     background: #669BBC;
     align-items: center;
-    gap:100px;
-    margin-left:400px;
-    margin-right: 320px;
+    margin-left:330px;
+    margin-right: 325px;
     margin-top: 10px;
     margin-bottom: 100px;
     justify-content: center;
@@ -71,11 +90,9 @@ div{
 a{
     text-decoration: none;
 }
-.label
+.Rlabel
 {
-    margin-top: 15px;
-    margin-left:550px;
-
+margin-left:620px;
 }
 .backButton
 {
@@ -87,7 +104,15 @@ a{
 {
     padding-bottom: 20px;
 }
-
+.error
+{
+font-family: Bahnschrift Light;
+color: red;
+font-size: 12px;
+display: flex;
+justify-content: center;
+margin-top: 10px;
+}
 /*
 #0C4767 mörkblå
 #88AB75 aspargus /grön

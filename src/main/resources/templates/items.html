@@ -5,20 +5,22 @@
     <!-- Sida för att visa en lista med flera annonser -->
     <meta charset="UTF-8">
     <title>Title</title>
+
+
 </head>
 <body>
 <div>
-    <h1>Annonser</h1>
+    <h2>Annonser</h2>
     <p><a href="/addItem">Ny annons</a></p>
     <div>
-        <table>
-            <tr>
+        <table class="itemlistingtable">
+            <tr class="itemlistingsmolheader">
                 <th>Namn</th>
                 <th>Pris</th>
             </tr>
             <tr th:each="item : ${items}">
-                <td><a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
-                <td th:text="${item.price}"></td>
+                <td class="itemlistingdata"><a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
+                <td class="itemlistingdata" th:text="${item.price}"></td>
             </tr>
         </table>
     </div>
