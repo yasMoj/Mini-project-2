@@ -224,6 +224,12 @@ display: flex;
 justify-content: center;
 margin-top: 10px;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 /*
 #0C4767 mörkblå
 #88AB75 aspargus /grön
