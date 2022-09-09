@@ -53,3 +53,29 @@ a{
     margin-left:550px;
 
 }
+
+body {
+    background-color: #dfecf4;
+    font-family: Bahnschrift Light
+}
+
+h2 {
+color: #0C4767;
+
+}
+
+#ytitle1 {
+    display: flex;
+    justify-content: center;
+    font-family: Bahnschrift SemiBold;
+}
+
+#ytitle2 {
+    display: flex;
+    justify-content: center;
+    font-family: Bahnschrift SemiBold;
+}
+
+.ylinks {
+    color: #88AB75;
+}
