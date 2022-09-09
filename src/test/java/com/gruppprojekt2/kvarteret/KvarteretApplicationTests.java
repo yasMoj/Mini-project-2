@@ -15,7 +15,7 @@ class KvarteretApplicationTests {
 	}
 
 	@Test
-	void testProduct()
+	void checkIfRepoIsInit()
 	{
 		ItemRepository itemRepository = new ItemRepository();
 		List<Item> items = itemRepository.getItems();

@@ -69,6 +69,12 @@ private List<Item> itemsList;
         return itemsList;
     }
 
+    public void removeItem(Item item)
+    {
+        if (itemsList.contains(item))
+            itemsList.remove(item);
+    }
+
     public List<Item> getPage(int page, int pageSize) {
         int from = Math.max(0,page*pageSize);
         int to = Math.min(itemsList.size(),(page+1)*pageSize);

@@ -1,8 +1,11 @@
 package com.gruppprojekt2.kvarteret;
 
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class UserRepository {
 
     private List<User> userList;
@@ -20,6 +23,17 @@ public class UserRepository {
     public User getUser(int id) {
         for (User user : userList) {
             if (user.getId() == id) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    // test
+    public User getUser(String username)
+    {
+        for (User user : userList) {
+            if (user.getEmail().equals(username)) {
                 return user;
             }
         }
