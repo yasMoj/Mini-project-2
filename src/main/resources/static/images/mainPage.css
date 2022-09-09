@@ -1,9 +1,27 @@
+
+.itemlistingdata {
+    width: 150px;
+}
+
+.itemlistingsmolheader {
+    text-align:
+}
+
+.itemlistingtable {
+    table-layout: fixed;
+    background: #669BBC;
+    gap:100px;
+    justify-content: center;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
 h1 {
     padding-top: 80px;
     position: absolute;
     left: 210px;
     top: -35px;
-
 }
 
 header{
@@ -12,13 +30,13 @@ header{
     justify-content: center;
     align-items: center;
     align-content: center;
-
 }
 .headerBild
 {
     box-shadow: 0 2px 5px #535353;
     border-radius: 10px;
 }
+
 .topMenu {
     display: flex;
     background: rgb(2, 144, 233);
