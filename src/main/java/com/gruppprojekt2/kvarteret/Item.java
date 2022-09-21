@@ -1,7 +1,6 @@
 package com.gruppprojekt2.kvarteret;
 
 import javax.persistence.*;
-import java.text.DecimalFormat;
 
 @Entity
 public class Item
@@ -12,7 +11,17 @@ public class Item
     private String name;
     private int price;
     private String description;
-    private int userID; // foreign key
+
+    @ManyToOne
+    private Siteuser siteuser;
+
+    public Siteuser getSiteuser() {
+        return siteuser;
+    }
+
+    public void setSiteuser(Siteuser siteuser) {
+        this.siteuser = siteuser;
+    }
 
     public Item() { }
 
@@ -54,11 +63,4 @@ public class Item
         this.description = description;
     }
 
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
 }

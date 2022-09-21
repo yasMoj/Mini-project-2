@@ -7,11 +7,8 @@ import java.util.List;
 
 public interface ItemSqlRepository extends CrudRepository<Item, Integer>
 {
-    Item findById(int id);
-    List<Item> findAll();
-    //void save(Item item);
+    //Item findById(int id);
+    //List<Item> findAll();
 
-    //@Query(value = "INSERT INTO item (firstName,lastName,email,password) values (?1,?1,?1,?1)", nativeQuery = true)
-    //List<Dog> findDogsWithQueryAge(int age);
 
 }

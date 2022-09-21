@@ -56,7 +56,7 @@ public class ItemController
     @PostMapping("/addItem")
     public String addItem(@ModelAttribute Item item, Model model, HttpServletRequest request) {
         model.addAttribute("item",item);
-        //itemRepository.save(item);
+        itemRepository.save(item);
 
         //User user = (User)userRepository.getUser(request.getRemoteUser());
         //item.setUserID(user.getId());

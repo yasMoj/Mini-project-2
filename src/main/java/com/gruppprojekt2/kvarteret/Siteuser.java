@@ -3,10 +3,11 @@ package com.gruppprojekt2.kvarteret;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name="Siteuser")
-public class User {
+public class Siteuser {
     @Id // Primärnyckeln
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment
     int id;
@@ -20,7 +21,19 @@ public class User {
     @NotEmpty
     String password;
 
-    public User(int id, String firstName, String lastName, String email, String password) {
+
+    @OneToMany(mappedBy = "siteuser", cascade = CascadeType.ALL)
+    private List<Item> items = new ArrayList<>();
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public Siteuser(int id, String firstName, String lastName, String email, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,7 +41,7 @@ public class User {
         this.password = password;
     }
 
-    public User(){}
+    public Siteuser(){}
 
     public String getPassword() {
         return password;

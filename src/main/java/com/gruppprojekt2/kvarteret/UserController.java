@@ -5,17 +5,13 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;*/
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class UserController {
@@ -38,13 +34,13 @@ public class UserController {
 
     @GetMapping("/newUser")
     public String showRegistrationForm(Model model) {
-        User user = new User();
+        Siteuser user = new Siteuser();
         model.addAttribute("user", user);
         return "newUser";
     }
 
     @PostMapping("/newUser")
-    public String registerUserAccount(@Valid User user, BindingResult bindingResult, Model model)
+    public String registerUserAccount(@Valid Siteuser user, BindingResult bindingResult, Model model)
     {
         if(bindingResult.hasErrors())
             return "newUser";
