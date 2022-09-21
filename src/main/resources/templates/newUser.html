@@ -24,16 +24,18 @@
             <th class="userInput">Email @: <input type="text" th:field="*{email}"/>
             <p class="error" th:if="${#fields.hasErrors('email')}">Enter email</p></th>
             <tr></tr>
-            <th class="userInput"> Password:     <input type="text" th:field="*{password}"/>
+            <th class="userInput"> Password:     <input type="password" th:field="*{password}"/>
             <p class="error" th:if="${#fields.hasErrors('password')}">Incorrect password</p></th>
             <tr></tr>
             <th class="userInput"> <input type="submit"/></th>
         </div></table>
     </form>
 </div>
-<div>
-<a class ="backButton" href="/">Log in</a></p>
-    </div>
+<div th:if="${user.firstName != null}">
+    <h2 id="ytitle2">Your login was created!<a href="/"> LOGIN HERE </a></h2>
 
+
+</div>
+<a class ="backButton" href="/">Back</a></p>
 </body>
 </html>

@@ -18,7 +18,8 @@
                 <th>Price</th>
             </tr>
             <tr th:each="item : ${items}">
-                <td class="itemlistingdataname"><a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
+                <td class="itemlistingdataname">
+                    <a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
                 <td class="itemlistingdataprice" th:text="${item.price} + ' SEK'"></td>
             </tr>
         </table>
