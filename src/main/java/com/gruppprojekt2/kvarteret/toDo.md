@@ -1,17 +1,15 @@
 **To fix**
-- logga ut knapp✓
-- tillbaka knapp✓
-- unit test ✓
-- lägga upp annonser knapp✓
-- sida/template lägga till annonser✓
-- Css till alla templates✓
-
-**Next version**
+- 
 - Database for ads and members
-- Admin page
+- Login from database / get from db
+
+
+**Nice to have**
+- Admin page / rights to delete
 - Pictures on items
-- New ad/Id
-- Share your "Only Fans"
+- Log file
+- Fix html & CSS
+
 
 
 itemS - Vincent
