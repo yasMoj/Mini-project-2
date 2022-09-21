@@ -4,6 +4,7 @@ package com.gruppprojekt2.kvarteret;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;*/
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,9 @@ import java.util.List;
 @Controller
 public class UserController {
  //   List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+
+    @Autowired
+    UserSqlRepository repository;
 
     @GetMapping("/")
     String start() {
@@ -47,8 +51,7 @@ public class UserController {
 
         model.addAttribute("user",user);
         SecurityConfig.addUser(user.email,user.password);
+        repository.save(user);
         return "newUser";
     }
-
-
 }

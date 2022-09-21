@@ -1,9 +1,13 @@
 package com.gruppprojekt2.kvarteret;
 
+import javax.persistence.*;
 import java.text.DecimalFormat;
 
+@Entity
 public class Item
 {
+    @Id // Primärnyckeln
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment
     private int id;
     private String name;
     private int price;

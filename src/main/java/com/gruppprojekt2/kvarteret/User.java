@@ -1,9 +1,14 @@
 package com.gruppprojekt2.kvarteret;
 
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+@Entity
+@Table(name="Siteuser")
 public class User {
+    @Id // Primärnyckeln
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment
     int id;
     @NotEmpty
     String firstName;
