@@ -2,6 +2,7 @@
 - 
 - Database for ads and members
 - Login from database / get from db
+- Incorrect type in create user and items
 
 
 **Nice to have**
