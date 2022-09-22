@@ -14,7 +14,6 @@
     <div>
         <table class="itemlistingtable">
             <tr class="itemlistingsmolheader">
-                <th></th>
                 <th>Product</th>
                 <th>Price</th>
             </tr>
@@ -22,6 +21,8 @@
                 <!-- th:src="/@{${item.img}} -->
                 <td><img th:src="${item.img}" width="100"></td>
                 <td class="itemlistingdataname"><a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
+                <td class="itemlistingdataname">
+                    <a th:href="'/items/' + ${item.id}" th:text="${item.name}"></a></td>
                 <td class="itemlistingdataprice" th:text="${item.price} + ' SEK'"></td>
             </tr>
         </table>
