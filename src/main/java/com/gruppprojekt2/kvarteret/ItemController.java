@@ -13,15 +13,18 @@ import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class ItemController
 {
     private static final int PAGE_SIZE = 10;
-
+    Logger logger = LoggerFactory.getLogger(ItemController.class);
     @Autowired
     ItemSqlRepository itemRepository;
     //ItemRepository itemRepository;
+
 
     @GetMapping("/items/{id}")
     public String item(Model model, @PathVariable Integer id) {
@@ -77,7 +80,7 @@ public class ItemController
         item.setImg("/images/" + item.getImg());
 
         itemRepository.save(item);
-
+        logger.info("User added an item" + " " + item );
         return "addItem";
     }
 
