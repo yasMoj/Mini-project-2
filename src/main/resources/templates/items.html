@@ -8,9 +8,19 @@
 
 </head>
 <body>
+<div class="LogInAs">
+<p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
+</div>
+
+<div class="vertical-menu">
+    <a class="top" href="/" >Home</a>
+    <a href="/profile">Profile</a>
+    <a href="/items" class="active">Ads</a>
+    <a href="/addItem">Create new ad</a>
+ <a href="/" class="bottom" th:action="@{/logout}" value="Logout">Log out</a>
+</div>
 <div class="itemlistinggeneral">
     <h3 class="itemlistingheader">ADS</h3>
-    <p><a href="/addItem" class="itemlistinglinks">Create new ads</a></p>
     <div>
         <table class="itemlistingtable">
             <tr class="itemlistingsmolheader">
@@ -27,7 +37,7 @@
             </tr>
         </table>
     </div>
-
+    <p><a href="/addItem" class="itemlistinglinks">Create new ads</a></p>
     <div class="row">
 
         <span th:if="${showPrev}">
@@ -45,12 +55,5 @@
 
     </div>
 </div>
-<p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Logout"/>
-</form>
-
-
-
 </body>
 </html>

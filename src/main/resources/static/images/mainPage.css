@@ -1,18 +1,67 @@
+.vertical-menu {
+  width: 200px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 25px;
+      margin-top: 170px;
+      font-family: Bahnschrift Light;
+}
+
+#myMenu {
+  width: 200px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 25px;
+      margin-top: 25px;
+      font-family: Bahnschrift Light;
+}
+
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+.top{
+border-radius: 10px 10px 0px 0px;
+}
+.bottom{
+border-radius: 0px 0px 10px 10px;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #FFC09F; /* Add a green color to the "active/current" link */
+  color: white;
+}
+
+.LogInAs
+{
+    margin-bottom: -160px;
+    margin-left: 30px;
+}
+.logOutButton
+{
+ margin-left: 40px;
+}
 .itemlistingheader {
-    display: flex;
-    width: 400;
-    align-items: center;
-    align-text: center;
-    background: #669BBC;
-    border-radius: 10px;
-    align-items: center;
-    margin-left:440px;
-    margin-right: 440px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    padding: 15px 50px 15px 50px;
-    align-content: space-around;
-    justify-content: space-around;
+          display: flex;
+          width: 400;
+          align-text: center;
+          background: #669BBC;
+          border-radius: 10px;
+          align-items: center;
+          margin-left: 440px;
+          margin-right: 440px;
+          margin-top: -213px;
+          margin-bottom: 19px;
+          padding: 15px 50px 15px 50px;
+          align-content: space-around;
+          justify-content: space-around;
 }
 
 .itemlistinglinks {
@@ -49,6 +98,42 @@
     justify-content: space-around;
     align-content: space-around;
     margin:auto;
+    margin-bottom: 20px;
+
+}
+.userInfo
+{
+    justify-items : center;
+    font-family: Bahnschrift SemiBold;
+    table-layout: fixed;
+    background: #88AB75;
+    gap:100px;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+       padding-right: 140px;
+       padding-left: 140px;
+    justify-content: space-around;
+    align-content: space-around;
+    margin:auto;
+    margin-bottom: 20px;
+
+}
+.userAds {
+      justify-items : center;
+        font-family: Bahnschrift SemiBold;
+        table-layout: fixed;
+        background: #88AB75;
+        gap:100px;
+        border-radius: 10px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-right: 140px;
+        padding-left: 140px;;
+        justify-content: space-around;
+        align-content: space-around;
+        margin:auto;
+    background: #FFC09F;
 }
 
 h1.kvarteret {
@@ -128,7 +213,7 @@ header{
         align-items: center;
         margin-left:450px;
         margin-right: 450px;
-        margin-top: 50px;
+        margin-top: -200px;
         margin-bottom: 20px;
     }
 h3{
