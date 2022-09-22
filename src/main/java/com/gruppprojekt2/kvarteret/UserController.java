@@ -44,10 +44,12 @@ public class UserController {
     {
         if(bindingResult.hasErrors())
             return "newUser";
+        else{
+            model.addAttribute("user",user);
+            SecurityConfig.addUser(user.email,user.password);
+            repository.save(user);
+        }
 
-        model.addAttribute("user",user);
-        SecurityConfig.addUser(user.email,user.password);
-        repository.save(user);
         return "newUser";
     }
 }

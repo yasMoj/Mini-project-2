@@ -3,10 +3,15 @@ package com.gruppprojekt2.kvarteret;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -54,13 +59,24 @@ public class ItemController
     }
 
     @PostMapping("/addItem")
-    public String addItem(@ModelAttribute Item item, Model model, HttpServletRequest request) {
+    public String addItem(@ModelAttribute Item item, Model model, HttpServletRequest request, @RequestParam("image") MultipartFile multipartFile) throws IOException {
         model.addAttribute("item",item);
-        itemRepository.save(item);
 
-        //User user = (User)userRepository.getUser(request.getRemoteUser());
-        //item.setUserID(user.getId());
-        //System.out.printf("New item added:%s",item.getName());
+        /*
+        // hämta filnament
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        item.setImg(fileName);
+
+        // gammal test
+        //item.setImg("/images/ads/" + item.getImg());
+        String uploadDir = "/images/";
+
+        FileUploadUtil.saveFile(uploadDir, item.getImg(), multipartFile);
+        */
+        //item.setImg("/images/" + item.getImg());
+        item.setImg("/images/" + item.getImg());
+
+        itemRepository.save(item);
 
         return "addItem";
     }

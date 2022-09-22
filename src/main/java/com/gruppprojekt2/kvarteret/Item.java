@@ -11,7 +11,8 @@ public class Item
     private String name;
     private int price;
     private String description;
-
+    //@Column(columnDefinition = "varchar(64) default 'default.png'")
+    private String img = "default.png";
     @ManyToOne
     private Siteuser siteuser;
 
@@ -30,6 +31,14 @@ public class Item
         this.name = name;
         this.price = price;
         this.description = description;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public int getId() {

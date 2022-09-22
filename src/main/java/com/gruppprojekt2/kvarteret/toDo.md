@@ -1,6 +1,6 @@
 **To fix**
 - 
-- Database for ads and members
+- Database for ads and members ✓
 - Login from database / get from db
 
 
