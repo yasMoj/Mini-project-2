@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="../images/mainPage.css">
 </head>
 <body>
-<form class="logOutButton" th:action="@{/logout}" method="post">
-    <input type="submit" value="Logout"/></form>
+<div class="LogInAs">
+   <span> <p th:text="${'Logged in as: ' + session.siteuser.firstName}"></p>
+    <form class="logOutButton" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/></form></span>
+</div>
 <div class="vertical-menu" id="myMenu">
     <a class="top" href="/" >Home</a>
     <a href="/profile" >Profile</a>

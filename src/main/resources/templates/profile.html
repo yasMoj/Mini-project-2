@@ -28,15 +28,15 @@
          <table class="userInfo">
              <!--   th:src="/@{${item.img}}
          <td><img th:src="${item.img}" width="100"></td>-->
-                <th>Name</th>
-             <!--  <th th:text="${item.name}"></th>-->
+                <th>Firstname</th>
+             <th th:text="${session.siteuser.firstName}"></th>
          <tr>
-             <th>Email</th>
-             <!--  <th th:text="${item.price}"></th>-->
+             <th>Lastname</th>
+             <th th:text="${session.siteuser.lastName}"></th>
           </tr>
           <tr>
-              <th>Description</th>
-              <!--  <th th:text="${item.description}"></th>-->
+              <th>Email</th>
+              <th th:text="${session.siteuser.email}"></th>
             </tr>
             </tr>
              </table>

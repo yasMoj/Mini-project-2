@@ -75,6 +75,9 @@ public class UserController {
         }
         return "startpage";
     }
+
+
+
     @GetMapping("/profile")
     String profile() {
         return "profile";
