@@ -11,8 +11,10 @@
 <div class="vertical-menu" id="myMenu">
     <a class="top" href="/" >Home</a>
     <a href="/profile" >Profile</a>
+    <a href="/yourAds" >Your ads</a>
     <a href="/items" >Ads</a>
-    <a href="/addItem" class="active">Create new ad</a>
+    <a href="/addItem" id="bottom" >Create new ad</a>
+
 
 </div>
 <h3 class="itemlistingheader">Product</h3>
@@ -31,6 +33,5 @@
         <th th:text="${item.description}"></th>
     </tr>
 </table>
-<p><a href="/items">Back</a></p>
 </body>
 </html>

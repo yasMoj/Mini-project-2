@@ -14,8 +14,9 @@
 <div class="vertical-menu" >
     <a class="top" href="/" >Home</a>
     <a href="/profile" >Profile</a>
+    <a href="/yourAds" >Your ads</a>
     <a href="/items" >Ads</a>
-    <a href="/addItem" class="active">Create new ad</a>
+    <a href="/addItem" id="bottom" class="active">Create new ad</a>
 
 </div>
 <div class="createAd">
@@ -31,8 +32,12 @@
         <tr></tr>
         <th class="itemInput">Price: <input type="text" th:field="*{price}"/>
         <p class="error" th:if="${#fields.hasErrors('name')}">Incorrect first name</p></th>
+        <tr></tr>
+        <td><img th:src="${item.img}" width="100"></td>
+        <tr></tr>
         <th><input type="file" name="image"/></th>
-        <--! th:field="*{img} -->
+        <!--! th:field="*{img} -->
+
         <tr></tr>
         <th class="itemInput"> <input type="submit"/></th>
     </div>

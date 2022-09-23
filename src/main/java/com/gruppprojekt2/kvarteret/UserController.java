@@ -79,6 +79,10 @@ public class UserController {
     String profile() {
         return "profile";
     }
+    @GetMapping("/yourAds")
+    String yourAds() {
+        return "yourAds";
+    }
     @PostMapping("/startpage")
     String profilepage()
     {

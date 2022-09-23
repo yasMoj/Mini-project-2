@@ -26,7 +26,7 @@
 .top{
 border-radius: 10px 10px 0px 0px;
 }
-.bottom{
+#bottom{
 border-radius: 0px 0px 10px 10px;
 }
 
@@ -50,10 +50,6 @@ border-radius: 0px 0px 10px 10px;
     margin-top: -35px;
 }
 
-.itemlistinggeneral
-{
-margin-top: 50px;
-}
 
 .itemlistingheader {
           display: flex;
