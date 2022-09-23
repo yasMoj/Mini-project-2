@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="images/mainPage.css">
+    <!-- Sida för att visa en lista med flera annonser -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div class="LogInAs">
+   <span> <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
+    <form class="logOutButton" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/></form></span>
+</div>
+
+<div class="vertical-menu">
+    <a class="top" href="/" >Home</a>
+    <a href="/profile" >Profile</a>
+    <a href="/yourAds" class="active">Your ads</a>
+    <a href="/items" >Ads</a>
+    <a href="/addItem" id="bottom" >Create new ad</a>
+</div>
+
+<div class="itemlistinggeneral">
+    <h3 class="itemlistingheader">YOUR ADS</h3>
+    <div>
+        <table class="userAds">
+            <tr class="itemlistingsmolheader">
+                <th>Your Ads</th>
+            </tr>
+            <!-- th:src="/@{${item.img}} -->
+            <!-- <td><img th:src="${item.img}" width="100"></td> -->
+            <th>Name</th>
+            <!-- <th th:text="${item.name}"></th>-->
+            </tr>
+            <tr>
+                <th>Price</th>
+                <!--  <th th:text="${item.price}"></th>-->
+            </tr>
+
+            <tr>
+                <th>Description</th>
+                <!--   <th th:text="${item.description}"></th>-->
+            </tr>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
