@@ -12,7 +12,7 @@ public class Item
     private int price;
     private String description;
     //@Column(columnDefinition = "varchar(64) default 'default.png'")
-    private String img = "default.png";
+    private String img = "/image/ads/default.png";
     @ManyToOne
     private Siteuser siteuser;
 

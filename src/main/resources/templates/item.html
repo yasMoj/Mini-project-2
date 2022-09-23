@@ -8,7 +8,7 @@
 <body>
 <div class="LogInAs">
    <span> <p th:text="${'Logged in as: ' + session.siteuser.firstName}"></p>
-    <form class="logOutButton" th:action="@{/logout}" method="post">
+    <form class="logOutButton" action="/logout" method="post">
     <input type="submit" value="Logout"/></form></span>
 </div>
 <div class="vertical-menu" id="myMenu">
@@ -34,6 +34,10 @@
     <tr>
         <th>Description</th>
         <th th:text="${item.description}"></th>
+    </tr>
+    <tr>
+        <th>User</th>
+        <th th:text="${item.siteuser.firstName}"></th>
     </tr>
 </table>
 </body>

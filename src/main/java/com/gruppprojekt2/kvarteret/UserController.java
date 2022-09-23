@@ -55,6 +55,7 @@ public class UserController {
 
             if (rs.next()){
                 // todo spara hela användaren
+                siteuser.setId(rs.getInt("id"));
                 siteuser.setFirstName(rs.getString("first_name"));
                 siteuser.setLastName(rs.getString("last_name"));
                 siteuser.setEmail(rs.getString("email"));
@@ -78,11 +79,11 @@ public class UserController {
         return "startpage";
     }
 
-    @GetMapping("/logout")
+    @GetMapping("/logoutuser")
     public String logout(HttpSession session, HttpServletResponse res)
     {
         session.removeAttribute("siteuser");
-        return "startpage";
+        return "redirect:/";
     }
 
     /*

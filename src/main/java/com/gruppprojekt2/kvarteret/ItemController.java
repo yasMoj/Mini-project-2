@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 import org.slf4j.Logger;
@@ -62,7 +63,7 @@ public class ItemController
     }
 
     @PostMapping("/addItem")
-    public String addItem(@ModelAttribute Item item, Model model, HttpServletRequest request, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+    public String addItem(@ModelAttribute Item item, Model model, HttpSession session, HttpServletRequest request, @RequestParam("image") MultipartFile multipartFile) throws IOException {
         model.addAttribute("item",item);
 
 
@@ -70,14 +71,18 @@ public class ItemController
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         item.setImg(fileName);
 
+        /*
         // gammal test
         //item.setImg("/images/ads/" + item.getImg());
-        String uploadDir = "/images/";
-
+        String uploadDir = System.getProperty("user.dir") + "//src//main//resources//static//images//ads";
         FileUploadUtil.saveFile(uploadDir, item.getImg(), multipartFile);
 
         //item.setImg("/images/" + item.getImg());
         //item.setImg("/images/" + item.getImg());
+        */
+
+        Siteuser siteuser = (Siteuser) session.getAttribute("siteuser");
+        item.setSiteuser(siteuser);
 
         itemRepository.save(item);
         logger.info("User added an item" + " " + item );
