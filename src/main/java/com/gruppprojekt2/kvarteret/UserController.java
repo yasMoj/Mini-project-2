@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -30,8 +31,10 @@ public class UserController {
     }
 
     @PostMapping("/")
-    String firstPage()
+    String firstPage(@RequestParam String username, @RequestParam String password)
     {
+        System.out.printf("Input name was: %s and password was: %s",username,password);
+        System.out.println();
         return "items";
     }
 

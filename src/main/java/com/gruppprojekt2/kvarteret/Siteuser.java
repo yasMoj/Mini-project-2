@@ -12,8 +12,10 @@ public class Siteuser {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment
     int id;
     @NotEmpty
+    @Column(name = "first_name")
     String firstName;
     @NotEmpty
+    @Column(name = "last_name")
     String lastName;
     @NotEmpty
     @Email

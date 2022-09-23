@@ -4,7 +4,6 @@
 - Login from database / get from db
 - Incorrect type in create user and items
 
-
 **Nice to have**
 - Admin page / rights to delete
 - Pictures on items
