@@ -15,6 +15,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import javax.validation.Valid;
@@ -76,7 +78,20 @@ public class UserController {
         return "startpage";
     }
 
+    @GetMapping("/logout")
+    public String logout(HttpSession session, HttpServletResponse res)
+    {
+        session.removeAttribute("siteuser");
+        return "startpage";
+    }
 
+    /*
+    @PostMapping("/logout")
+    public String logoutb(HttpSession session, HttpServletResponse res)
+    {
+        session.removeAttribute("siteuser");
+        return "startpage";
+    }*/
 
     @GetMapping("/profile")
     String profile() {
