@@ -65,7 +65,7 @@ public class ItemController
     public String addItem(@ModelAttribute Item item, Model model, HttpServletRequest request, @RequestParam("image") MultipartFile multipartFile) throws IOException {
         model.addAttribute("item",item);
 
-        /*
+
         // hämta filnament
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         item.setImg(fileName);
@@ -75,9 +75,9 @@ public class ItemController
         String uploadDir = "/images/";
 
         FileUploadUtil.saveFile(uploadDir, item.getImg(), multipartFile);
-        */
+
         //item.setImg("/images/" + item.getImg());
-        item.setImg("/images/" + item.getImg());
+        //item.setImg("/images/" + item.getImg());
 
         itemRepository.save(item);
         logger.info("User added an item" + " " + item );
