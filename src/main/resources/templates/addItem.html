@@ -45,7 +45,7 @@
 </form>
 
 <div th:if="${item.name != null}">
-    <h2 id="ytitle2">Your add is created! </h2>
+    <a th:href="'/items/' + ${item.id}"> <h2 id="ytitle2">Your add is created! </h2></a>
     <!--<a th:href="'/items/' + ${item.id}">-->
     <div class ="created">
         <table style="padding-left: 10px;">
@@ -55,7 +55,7 @@
             <tr></tr>
             <th><p th:text="'Price: ' + ${item.price}"></p></th>
         </table>
-    </div></a>
+    </div>
 </div>
 
 </body>
