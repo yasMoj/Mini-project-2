@@ -46,8 +46,15 @@ border-radius: 0px 0px 10px 10px;
 }
 .logOutButton
 {
- margin-left: 40px;
+    margin-left: 1150px;
+    margin-top: -35px;
 }
+
+.itemlistinggeneral
+{
+margin-top: 50px;
+}
+
 .itemlistingheader {
           display: flex;
           width: 400;
