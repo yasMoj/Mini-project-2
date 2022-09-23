@@ -11,7 +11,7 @@
     <form class="logOutButton" th:action="@{/logout}" method="post">
     <input type="submit" value="Logout"/></form></span>
 </div>
-<div class="vertical-menu" id="myMenu">
+<div class="vertical-menu" >
     <a class="top" href="/" >Home</a>
     <a href="/profile" >Profile</a>
     <a href="/items" >Ads</a>
@@ -41,6 +41,7 @@
 
 <div th:if="${item.name != null}">
     <h2 id="ytitle2">Your add is created! </h2>
+    <!--<a th:href="'/items/' + ${item.id}">-->
     <div class ="created">
         <table style="padding-left: 10px;">
             <th><p th:text="'Name: ' + ${item.name}"></p></th>
@@ -49,9 +50,8 @@
             <tr></tr>
             <th><p th:text="'Price: ' + ${item.price}"></p></th>
         </table>
-    </div>
+    </div></a>
 </div>
 
-<p class="knappar" ><a href="/addItem">Create a new add</a> | <a href="/items">Back</a></p>
 </body>
 </html>
