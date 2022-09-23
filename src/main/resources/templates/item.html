@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="../images/mainPage.css">
 </head>
 <body>
+<form class="logOutButton" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/></form>
+<div class="vertical-menu" id="myMenu">
+    <a class="top" href="/" >Home</a>
+    <a href="/profile" >Profile</a>
+    <a href="/items" >Ads</a>
+    <a href="/addItem" class="active">Create new ad</a>
+
+</div>
 <h3 class="itemlistingheader">Product</h3>
 <table class="itemlistingtable">
     <tr class="itemlistingsmolheader">
