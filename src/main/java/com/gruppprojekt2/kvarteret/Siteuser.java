@@ -43,6 +43,7 @@ public class Siteuser {
         this.password = password;
     }
 
+
     public Siteuser(){}
 
     public String getPassword() {

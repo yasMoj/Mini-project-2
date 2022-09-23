@@ -46,14 +46,18 @@ public class UserController {
         //System.out.println();
 
         String pw = "";
+        Siteuser siteuser = new Siteuser();
         try (Connection conn = dataSource.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT * FROM Siteuser WHERE first_name = '" + username + "'")) {
 
             if (rs.next()){
                 // todo spara hela användaren
-
-                pw = rs.getString("password");
+                siteuser.setFirstName(rs.getString("first_name"));
+                siteuser.setLastName(rs.getString("last_name"));
+                siteuser.setEmail(rs.getString("email"));
+                siteuser.setPassword(rs.getString("password"));
+                //pw = rs.getString("password");
             }
 
         } catch (SQLException e) {
@@ -62,10 +66,11 @@ public class UserController {
         //Siteuser siteuser = repository.findByUser_name(username);
 
 
-        if(password.equals(pw))
+        if(password.equals(siteuser.getPassword()))
         {
-            //session.setAttribute("siteuser",siteuser);
-            System.out.printf("\n\n\n\nINLOGGAD SOM %s", pw);
+            session.setAttribute("siteuser",siteuser);
+            System.out.printf("\n\n\n\nINLOGGAD SOM %s %s med mail %s och password %s",siteuser.firstName,siteuser.lastName,siteuser.getEmail(),siteuser.getPassword());
+
             return "items";
         }
         return "startpage";
