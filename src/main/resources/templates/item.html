@@ -8,7 +8,7 @@
 <body>
 <div class="LogInAs">
    <span> <p th:text="${'Logged in as: ' + session.siteuser.firstName}"></p>
-    <form class="logOutButton" action="/logoutuser" method="post">
+    <form class="logOutButton" action="/logoutuser" method="get">
     <input type="submit" value="Logout"/></form></span>
 </div>
 <div class="vertical-menu" id="myMenu">

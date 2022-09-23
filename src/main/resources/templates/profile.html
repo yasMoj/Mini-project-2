@@ -10,7 +10,7 @@
 <body>
 <div class="LogInAs">
    <span> <p th:text="${'Logged in as: ' + session.siteuser.firstName}"></p>
-    <form class="logOutButton" th:action="@{/logoutuser}" method="post">
+    <form class="logOutButton" th:action="@{/logoutuser}" method="get">
     <input type="submit" value="Logout"/></form></span>
 </div>
 
