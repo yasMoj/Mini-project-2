@@ -50,7 +50,6 @@ border-radius: 0px 0px 10px 10px;
     margin-top: -35px;
 }
 
-
 .itemlistingheader {
           display: flex;
           width: 400;
@@ -317,6 +316,14 @@ margin-top: 10px;
     flex-direction: row;
     justify-content: center;
 }
+
+@media(max-width:700px){
+    .body{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /*
 #0C4767 mörkblå
 #88AB75 aspargus /grön
