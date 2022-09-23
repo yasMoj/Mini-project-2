@@ -5,6 +5,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;*/
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,7 +15,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 import javax.validation.Valid;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 @Controller
 public class UserController {
@@ -23,6 +30,8 @@ public class UserController {
     @Autowired
     UserSqlRepository repository;
 
+    @Autowired
+    private DataSource dataSource;
 
     @GetMapping("/")
     String start() {
@@ -31,11 +40,35 @@ public class UserController {
     }
 
     @PostMapping("/")
-    String firstPage(@RequestParam String username, @RequestParam String password)
+    String firstPage(@RequestParam String username, @RequestParam String password, HttpSession session)
     {
-        System.out.printf("Input name was: %s and password was: %s",username,password);
-        System.out.println();
-        return "items";
+        //System.out.printf("Input name was: %s and password was: %s",username,password);
+        //System.out.println();
+
+        String pw = "";
+        try (Connection conn = dataSource.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM Siteuser WHERE first_name = '" + username + "'")) {
+
+            if (rs.next()){
+                // todo spara hela användaren
+
+                pw = rs.getString("password");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //Siteuser siteuser = repository.findByUser_name(username);
+
+
+        if(password.equals(pw))
+        {
+            //session.setAttribute("siteuser",siteuser);
+            System.out.printf("\n\n\n\nINLOGGAD SOM %s", pw);
+            return "items";
+        }
+        return "startpage";
     }
     @GetMapping("/profile")
     String profile() {
@@ -50,7 +83,9 @@ public class UserController {
     @GetMapping("/newUser")
     public String showRegistrationForm(Model model) {
         Siteuser user = new Siteuser();
+
         model.addAttribute("user", user);
+
         logger.info("User tries to make account: " + user);
         return "newUser";
     }
