@@ -13,6 +13,9 @@ import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,20 +69,29 @@ public class ItemController
     public String addItem(@ModelAttribute Item item, Model model, HttpSession session, HttpServletRequest request, @RequestParam("image") MultipartFile multipartFile) throws IOException {
         model.addAttribute("item",item);
 
-
-        // hämta filnament
+        // Hämta filnamnet
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-        item.setImg(fileName);
 
-        /*
-        // gammal test
-        //item.setImg("/images/ads/" + item.getImg());
-        String uploadDir = System.getProperty("user.dir") + "//src//main//resources//static//images//ads";
-        FileUploadUtil.saveFile(uploadDir, item.getImg(), multipartFile);
+        // Har användaren inte laddat upp en bild så vill fortsätta använda default
+        if(!fileName.equals(""))
+        {
+            item.setImg(fileName);
 
-        //item.setImg("/images/" + item.getImg());
-        //item.setImg("/images/" + item.getImg());
-        */
+            // Lägg till bilden i projektmappen /images/[bildnamn.typ]
+            /* Med FileUploadUtil
+
+            String uploadDir = "images/" + item.getId();
+            FileUploadUtil.saveFile(uploadDir, item.getImg(), multipartFile);
+             */
+
+            // System.getProperty("user.dir") pekar på C:\Users\...\kvarteret
+            String folder = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\images\\ads\\";
+            byte[] bytes = multipartFile.getBytes();
+            Path path = Paths.get(folder + multipartFile.getOriginalFilename());
+            Files.write(path,bytes);
+
+            item.setImg("images/ads/" + item.getImg()); // item.getImg()
+        }
 
         Siteuser siteuser = (Siteuser) session.getAttribute("siteuser");
         item.setSiteuser(siteuser);
