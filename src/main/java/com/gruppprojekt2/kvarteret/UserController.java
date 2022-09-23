@@ -37,7 +37,15 @@ public class UserController {
         System.out.println();
         return "items";
     }
-
+    @GetMapping("/profile")
+    String profile() {
+        return "profile";
+    }
+    @PostMapping("/startpage")
+    String profilepage()
+    {
+        return "profile";
+    }
 
     @GetMapping("/newUser")
     public String showRegistrationForm(Model model) {
